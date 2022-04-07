@@ -1,0 +1,83 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.videoDiv {
+  position: relative;
+  display: inline-block;
+}
+
+#startVideo {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-bottom: 100%;
+}
+
+#textOverlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guestInfo{
+  font-size: 200%;
+  position: absolute;
+}
+
+#guestInfo0{
+  top: 250px;
+  left: 200px;
+  transform: rotate(-5deg);
+}
+
+#guestInfo1{
+  top: 220px;
+  left: 660px;
+  transform: rotate(2deg);
+}
+
+#overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.8;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#overlay.hide {
+  display: none;
+}
+
+#insertedText {
+  font-size: 600%;
+  color: white;
+  text-align: center;
+  z-index: 0;
+  cursor: default;
+  pointer-events: none;
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
