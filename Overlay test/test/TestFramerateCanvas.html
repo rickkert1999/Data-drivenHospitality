@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <video id="currentFrame" width="320" controls="true">
+      <source src="../video/test.mp4" />
+    </video>
+
+    <button id="play-pause">play-pause</button>
+
+    <script>
+      var currentFrame = document.getElementById("currentFrame");
+      var video = VideoFrame({
+        id: "video",
+        frameRate: 25,
+        callback: function (frame) {
+          currentFrame.innerHTML = frame;
+        },
+      });
+
+      document
+        .getElementById("play-pause")
+        .addEventListener("click", function (e) {
+          if (video.video.paused) {
+            video.video.play();
+            video.listen("frame");
+            e.target.innerHTML = "Pause";
+          } else {
+            video.video.pause();
+            video.stopListen();
+            e.target.innerHTML = "Play";
+          }
+        });
+    </script>
+  </body>
+</html>

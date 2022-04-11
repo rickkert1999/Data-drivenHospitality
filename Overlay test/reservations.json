@@ -1,0 +1,36 @@
+{
+  "reservations": [
+    {
+      "id": 0,
+      "guests": [
+        {
+          "firstName": "Marc",
+          "lastName": "Graaf",
+          "preferences": ["wine", "no fish"],
+          "email": ""
+        },
+        {
+          "firstName": "Anna",
+          "lastName": "Graaf",
+          "preferences": ["wine", "no champions", "no union"]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "guests": [
+        {
+          "firstName": "Youri",
+          "lastName": "Oldenhof",
+          "preferences": ["wine", "meat"],
+          "email": ""
+        },
+        {
+          "firstName": "Kaloyan",
+          "lastName": "Madzhunov",
+          "preferences": ["wine", "fish"]
+        }
+      ]
+    }
+  ]
+}
