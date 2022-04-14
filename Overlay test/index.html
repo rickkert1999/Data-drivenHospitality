@@ -9,14 +9,19 @@
   </head>
   <body>
     <div class="videoDiv">
-      <video id="video" src="video/prepVideo.mp4" type="video/mp4"></video>
+      <video
+        id="video"
+        muted
+        src="video/prepVideo.mp4"
+        type="video/mp4"
+      ></video>
 
       <div id="textOverlay"></div>
 
       <div id="overlay">
         <!-- <img id="startVideo" src="image/play.jpg" alt="" /> -->
         <div id="startVideo" style="background-image: url('image/play.jpg')">
-          <img src="image/play.jpg" class="full-width hidden" />
+          <img src="image/play.jpg" class="full-width hidden" id="playBtn" />
         </div>
       </div>
     </div>

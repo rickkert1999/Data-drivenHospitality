@@ -1,4 +1,4 @@
-body {
+body{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,4 +80,8 @@ body {
   
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+}
+
+#playBtn{
+  opacity: 0%;
 }
