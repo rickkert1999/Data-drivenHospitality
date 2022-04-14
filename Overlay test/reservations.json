@@ -2,33 +2,43 @@
   "reservations": [
     {
       "id": 0,
+      "date": "",
+      "gate": 1,
+      "time": "18:00",
       "guests": [
         {
+          "email": "",
           "firstName": "Marc",
           "lastName": "Graaf",
           "preferences": ["wine", "no fish"],
-          "email": ""
+          "seatNbr": 8
         },
         {
           "firstName": "Anna",
           "lastName": "Graaf",
-          "preferences": ["wine", "no champions", "no union"]
+          "preferences": ["wine", "no champions", "no union"],
+          "seatNbr": 9
         }
       ]
     },
     {
       "id": 1,
+      "date": "",
+      "gate": 1,
+      "time": "18:00",
       "guests": [
         {
+          "email": "",
           "firstName": "Youri",
           "lastName": "Oldenhof",
           "preferences": ["wine", "meat"],
-          "email": ""
+          "seatNbr": 11
         },
         {
           "firstName": "Kaloyan",
           "lastName": "Madzhunov",
-          "preferences": ["wine", "fish"]
+          "preferences": ["wine", "fish"],
+          "seatNbr": 12
         }
       ]
     }
