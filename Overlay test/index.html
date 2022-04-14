@@ -23,23 +23,5 @@
 
     <script src="javascript/VideoFrame.js"></script>
     <script src="javascript/javascript.js"></script>
-    <script>var currentFrame = document.getElementById('currentFrame');
-      var video = new VideoFrame({
-          id : 'video',
-          frameRate: 25,
-          callback : function(frame) {
-              currentFrame.innerHTML = frame ;
-          }
-      });
-
-      document.getElementById('play-pause').addEventListener('click', function(e){
-          if(video.video.paused){
-              video.video.play();
-              video.listen('frame');
-          }else{
-              video.video.pause();
-              video.stopListen();
-          }
-      });</script>
   </body>
 </html>
