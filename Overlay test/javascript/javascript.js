@@ -6,11 +6,11 @@ fetch("reservations.json")
     const overlay = document.getElementById("overlay");
     const textOverlay = document.getElementById("textOverlay");
     myVideo.addEventListener("ended", myHandeler, false);
-    let counter = 0;
-    let timeout;
 
-    //Id of the reservation
-    let reservationId = 0;
+    //Get the reservationId out of the url
+    // ?reservationId=[the reservationId] Add this after link
+    const urlParams = new URLSearchParams(window.location.search);
+    const reservationId = urlParams.get("reservationId");
 
     var currentFrame = document.getElementById("video");
     var video = VideoFrame({
