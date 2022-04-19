@@ -1,5 +1,5 @@
-//json test data
-fetch("reservations.json")
+//get json data
+fetch("json/reservations.json")
   .then((response) => response.json())
   .then((dataGuest) => {
     const myVideo = document.getElementById("video");
@@ -7,7 +7,7 @@ fetch("reservations.json")
     const textOverlay = document.getElementById("textOverlay");
     myVideo.addEventListener("ended", myHandeler, false);
 
-    //Get the reservationId out of the url
+    //get the reservationId out of the url
     // ?reservationId=[the reservationId] Add this after link
     const urlParams = new URLSearchParams(window.location.search);
     const reservationId = urlParams.get("reservationId");

@@ -6,23 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <span>Name: <input type="text" /> </span>
-    <br /><br />
-    <span>E-mail: <input type="text" /></span>
-    <br /><br />
-    <span>Wine Arangement: <input type="checkbox" /> </span>
-    <br /><br />
+  <body style="font-family: Arial, Helvetica, sans-serif">
+    <center style="margin-top: 10%">
+      <h1>Reserverings formulier</h1>
+      <div
+        id="wrap"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 5%; ;
+        "
+      >
+        <div class="guest1">
+          <h3>Guest 1</h3>
+          <span>First name: <input type="text" /> </span> <br /><br />
+          <span>Last name: <input type="text" /> </span> <br /><br />
 
-    <span>Preferences:</span><br />
-    <span>Fish: <input type="radio" /> </span>
-    <span>Meat: <input type="radio" /> </span><br /><br />
+          <span>E-mail: <input type="text" /></span> <br /><br />
+          <span>Wine Arangement: <input type="checkbox" /> </span>
+          <br /><br />
 
-    <span>Alergies:</span><br />
-    <span>Lactoze: <input type="checkbox" /> </span> <br />
-    <span>Gluten: <input type="checkbox" /> </span> <br />
-    <br />
+          <span>Preferences:</span><br />
+          <span>Fish: <input type="radio" /> </span>
+          <span>Meat: <input type="radio" /> </span><br /><br />
 
-    <button>Add guest</button>
+          <span>Alergies:</span><br />
+          <span>Lactoze: <input type="checkbox" /> </span> <br />
+          <span>Gluten: <input type="checkbox" /> </span> <br />
+          <br />
+        </div>
+
+        <div class="guest2">
+          <h3>Guest 2</h3>
+          <span>First name: <input type="text" /> </span> <br /><br />
+          <span>Last name: <input type="text" /> </span> <br /><br />
+
+          <span>Wine Arangement: <input type="checkbox" /> </span>
+          <br /><br />
+
+          <span>Preferences:</span><br />
+          <span>Fish: <input type="radio" /> </span>
+          <span>Meat: <input type="radio" /> </span><br /><br />
+
+          <span>Alergies:</span><br />
+          <span>Lactoze: <input type="checkbox" /> </span> <br />
+          <span>Gluten: <input type="checkbox" /> </span> <br />
+          <br />
+
+          <button id="reservation">Reservation</button>
+        </div>
+      </div>
+    </center>
+
+    <script>
+      //get json data
+      fetch("json/reservations.json")
+        .then((response) => response.json())
+        .then((dataGuest) => {
+          console.log(dataGuest.reservations[0].guests[0].firstName);
+        });
+
+      // var dict = {
+      //   one: [15, 4.5],
+      //   two: [34, 3.3],
+      //   three: [67, 5.0],
+      //   four: [32, 4.1],
+      // };
+
+      // var dictstring = JSON.stringify(dict);
+
+      // var fs = require("fs");
+      // fs.writeFile("json/thing.json", dictstring);
+    </script>
   </body>
 </html>
