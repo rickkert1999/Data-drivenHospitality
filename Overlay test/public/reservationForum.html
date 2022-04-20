@@ -9,7 +9,7 @@
   <body style="font-family: Arial, Helvetica, sans-serif">
     <center style="margin-top: 10%">
       <h1>Reserverings formulier</h1>
-      <div
+      <form
         id="wrap"
         style="
           display: flex;
@@ -54,30 +54,30 @@
           <span>Gluten: <input type="checkbox" /> </span> <br />
           <br />
 
-          <button id="reservation">Reservation</button>
+          <!-- <button id="reservation">Reservation</button> -->
         </div>
-      </div>
+      </form>
+
+      <button id="reservation">Reservation</button>
     </center>
 
     <script>
-      //get json data
-      fetch("json/reservations.json")
-        .then((response) => response.json())
-        .then((dataGuest) => {
-          console.log(dataGuest.reservations[0].guests[0].firstName);
+      const a = 1;
+      const b = 2;
+      const testData = { a, b };
+      const options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(testData),
+      };
+
+      document
+        .getElementById("reservation")
+        .addEventListener("click", function sendData() {
+          fetch("/reservation", options).then((res) => {
+            console.log(res);
+          });
         });
-
-      // var dict = {
-      //   one: [15, 4.5],
-      //   two: [34, 3.3],
-      //   three: [67, 5.0],
-      //   four: [32, 4.1],
-      // };
-
-      // var dictstring = JSON.stringify(dict);
-
-      // var fs = require("fs");
-      // fs.writeFile("json/thing.json", dictstring);
     </script>
   </body>
 </html>
