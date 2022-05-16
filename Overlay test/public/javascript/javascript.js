@@ -43,7 +43,6 @@ fetch("json/reservations.json")
 
               textOverlay.appendChild(divName);
 
-              console.log(guestName);
               //for each guest write down the preferance
               for (var j = 0; j < guest.preferences.length; j++) {
                 var preference = guest.preferences[j];
@@ -56,7 +55,6 @@ fetch("json/reservations.json")
                   .getElementById("guestInfo" + i)
                   .appendChild(paraPreference);
               }
-              console.log(preference);
             }
           }
         } else if (frame > 1148 && frame < 1274) {
@@ -66,7 +64,71 @@ fetch("json/reservations.json")
             dataGuest.reservations[reservationId].guests[0].firstName +
             "!" +
             "</p>";
-        } else {
+        } else if (frame > 1274 && frame < 1425) {
+          if (frame === 1275) {
+            textOverlay.innerHTML = "";
+
+            //for each guest write down the name
+            for (var i = 0; i < 2; i++) {
+              var guest = dataGuest.reservations[reservationId].guests[i];
+              var guestName = guest.firstName + " " + guest.lastName;
+
+              const divName = document.createElement("div");
+              divName.setAttribute("id", "guestInfo" + i);
+              divName.setAttribute("class", "guestInfo");
+              divName.innerHTML = "<p id=name" + i + ">" + guestName + "</p>";
+
+              textOverlay.appendChild(divName);
+
+              //for each guest write down the preferance
+              for (var j = 0; j < 2; j++) {
+                var preference = guest.preferences[j];
+
+                const paraPreference = document.createElement("p");
+                paraPreference.setAttribute("id", "preference" + j);
+                paraPreference.innerHTML = preference;
+
+                document
+                  .getElementById("guestInfo" + i)
+                  .appendChild(paraPreference);
+              }
+            }
+          }
+        }
+        ////////TEST BOARDINGPOS TEST
+        else if (frame > 0 && frame < 1425) {
+          if (frame === 1) {
+            textOverlay.innerHTML = "";
+
+            //for each guest write down the name
+            for (var i = 0; i < 2; i++) {
+              var guest = dataGuest.reservations[reservationId].guests[i];
+              var guestName = guest.firstName + " " + guest.lastName;
+
+              const divName = document.createElement("div");
+              divName.setAttribute("id", "guestInfo" + i);
+              divName.setAttribute("class", "guestInfo");
+              divName.innerHTML = "<p id=name" + i + ">" + guestName + "</p>";
+
+              textOverlay.appendChild(divName);
+
+              //for each guest write down the preferance
+              for (var j = 0; j < 2; j++) {
+                var preference = guest.preferences[j];
+
+                const paraPreference = document.createElement("p");
+                paraPreference.setAttribute("id", "preference" + j);
+                paraPreference.innerHTML = preference;
+
+                document
+                  .getElementById("guestInfo" + i)
+                  .appendChild(paraPreference);
+              }
+            }
+          }
+        }
+        ////////////
+        else {
           textOverlay.innerHTML = "";
         }
       },
