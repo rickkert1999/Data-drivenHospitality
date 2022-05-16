@@ -1,1 +1,25 @@
-{"a":1,"b":2}
+{
+  "reservations": [
+    {
+      "id": 1,
+      "date": "",
+      "gate": 1,
+      "time": "18:00",
+      "guests": [
+        {
+          "email": "",
+          "firstName": "sdf",
+          "lastName": "sfd",
+          "preferences": ["wine", "no fish"],
+          "seatNbr": 8
+        },
+        {
+          "firstName": "sdf",
+          "lastName": "fffff",
+          "preferences": ["wine", "no muchrooms", "no union"],
+          "seatNbr": 9
+        }
+      ]
+    }
+  ]
+}
