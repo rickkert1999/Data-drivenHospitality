@@ -1,0 +1,36 @@
+body{}
+
+h1, h2, h3, h4, h5, h6{margin: 0 0 10px 0;}
+
+.grid{display: flex; justify-content: space-between;}
+
+.video-container{width: 100%; height: auto;}
+.video-container video{width: 100%;}
+
+.column{padding: 0 10px;}
+.column#column-1{width: 25%;}
+.column#column-2{width: 40%;}
+.column#column-3{width: 37.5%;}
+
+.tile{background-color: #eaeaea; padding: 15px; margin: 20px 0;}
+
+
+
+/* RESERVATION */
+.reservations{display: flex; justify-content: space-between; flex-wrap: wrap;}
+.reservation{background-color: #fff; width: calc(50% - 5px); display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px;}
+.reservation h5{margin: 0;}
+.reservation .left, .reservation .right{padding: 10px;}
+
+/* TABS */
+.text-values ul{list-style-type: none; padding: 0; margin: 0 0 15px 0; display: flex; justify-content: flex-start;}
+.text-values ul li{display: inline-block; margin-right: 10px;}
+.text-values ul li:last-child{margin-right: 0;}
+.tabs{margin-top: 10px;}
+.tabs .buttons button{border: 0; background-color: #aeaeae; margin: 0; padding: 5px 10px;}
+.tabs .buttons button.plus{background-color: transparent;}
+.tabs .buttons button:hover{cursor: pointer;}
+.tabs .buttons button:hover, .tabs .buttons button.active{background-color: #fff;}
+.tabs .tabcontent{background-color: #fff; padding: 10px;}
+.tabs .tabcontent textarea{width: calc(100% - 20px); height: 100px; resize: none; padding: 8px;}
+.tabs .tabcontent .text-settings{display: flex; justify-content: space-between; margin-top: 5px;}
