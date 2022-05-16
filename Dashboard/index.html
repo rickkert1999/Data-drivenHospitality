@@ -1,241 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
 
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
     <section class="intro">
-        <h1>DDH Dashboard</h1>
+      <h1>DDH Dashboard</h1>
     </section>
 
     <section class="grid">
-
-        <div id="column-1" class="column">
-            <div class="tile">
-                <h3>Standard video</h3>
-                <div class="video-container">
-                    <video controls>
-                        <source src="/videos/Prep video with tickets v2.mp4" muted type="video/mp4">
-                    </video>
-                </div>
-            </div>
-
-            <div class="tile">
-                <div class="sharing-options">
-                    <h3>Sharing Options</h3>
-                    <ul>
-                        <li><input type="checkbox" id="instagram-feed" name="instagram-feed" checked><label for="instagram-feed">Instagram Feed</label></li>
-                        <li><input type="checkbox" id="instagram-stories" name="instagram-stories"><label for="instagram-stories">Instagram Stories</label></li>
-                        <li><input type="checkbox" id="facebook-feed" name="facebook-feed"><label for="facebook-feed">Facebook Feed</label></li>
-                        <li><input type="checkbox" id="whatsapp" name="whatsapp"><label for="whatsapp">Whatsapp</label></li>
-                    </ul>
-                </div>
-                <div class="time-settings-container">
-                    <h3>Time to send</h3>
-                    <span>How many days are there between sending the video and the visit</span>
-
-                    <div class="time-options">
-                        <div class="interval">
-                            <span class="text">Days</span>
-                            <input type="number" id="interval_value" name="interval">
-                        </div>
-                        <div class="time">
-                            <span class="text">Time</span>
-                            <input type="time" id="time_value" name="time">
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div id="column-1" class="column">
+        <div class="tile">
+          <h3>Standard video</h3>
+          <div class="video-container">
+            <video controls muted src="../Overlay test/public/video/prepVideo.mp4" type="video/mp4"></video>
+          </div>
         </div>
 
-        <div id="column-2" class="column">
-            <div class="tile">
-                <h1>April</h1>
-                /* calendar */
+        <div class="tile">
+          <div class="sharing-options">
+            <h3>Sharing Options</h3>
+            <ul>
+              <li>
+                <input
+                  type="checkbox"
+                  id="instagram-feed"
+                  name="instagram-feed"
+                  checked
+                /><label for="instagram-feed">Instagram Feed</label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="instagram-stories"
+                  name="instagram-stories"
+                /><label for="instagram-stories">Instagram Stories</label>
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="facebook-feed"
+                  name="facebook-feed"
+                /><label for="facebook-feed">Facebook Feed</label>
+              </li>
+              <li>
+                <input type="checkbox" id="whatsapp" name="whatsapp" /><label
+                  for="whatsapp"
+                  >Whatsapp</label
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="time-settings-container">
+            <h3>Time to send</h3>
+            <span
+              >How many days are there between sending the video and the
+              visit</span
+            >
+
+            <div class="time-options">
+              <div class="interval">
+                <span class="text">Days</span>
+                <input type="number" id="interval_value" name="interval" />
+              </div>
+              <div class="time">
+                <span class="text">Time</span>
+                <input type="time" id="time_value" name="time" />
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="tile">
-                <h1>Used video</h1>
-                <div class="video-container">
-                    <video controls>
-                        <source src="/videos/Prep video with tickets v2.mp4" muted type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="video-frames">
-                    /* frames */
-                </div>
-
-                <div class="timeline">
-                    /* timeline */
-                </div>
-            </div>
+      <div id="column-2" class="column">
+        <div class="tile">
+          <h1>April</h1>
+          /* calendar */
         </div>
 
-        <div id="column-3" class="column">
-            <div class="tile">
-                <h1>Reservations sending today</h1>
+        <div class="tile">
+          <h1>Used video</h1>
+          <div class="video-container">
+            <video controls id="dashboard_video" src="../Overlay test/public/video/prepVideo.mp4" type="video/mp4"></video>
+            <button id="play-pause">play</button>
+          </div>
 
-                <div class="reservations" id="reservation-container">
-                    <div class="reservation">
-                        <div class="left">
-                            <h5>De Graaf</h5>
-                            <div class="reservation-date">
-                                <img src="images/eat-icon.svg" alt="eat-icon">
-                                <span class="res-date">30 apr. 2022</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <span class="res-id" id="0980">ID: 0980</span>
-                            <div class="group">
-                                <img src="images/group icon.svg" alt="group-icon">
-                                <span class="group-number">4</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reservation">
-                        <div class="left">
-                            <h5>De Graaf</h5>
-                            <div class="reservation-date">
-                                <img src="images/eat-icon.svg" alt="eat-icon">
-                                <span class="res-date">30 apr. 2022</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <span class="res-id" id="0980">ID: 0980</span>
-                            <div class="group">
-                                <img src="images/group icon.svg" alt="group-icon">
-                                <span class="group-number">4</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reservation">
-                        <div class="left">
-                            <h5>De Graaf</h5>
-                            <div class="reservation-date">
-                                <img src="images/eat-icon.svg" alt="eat-icon">
-                                <span class="res-date">30 apr. 2022</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <span class="res-id" id="0980">ID: 0980</span>
-                            <div class="group">
-                                <img src="images/group icon.svg" alt="group-icon">
-                                <span class="group-number">4</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reservation">
-                        <div class="left">
-                            <h5>De Graaf</h5>
-                            <div class="reservation-date">
-                                <img src="images/eat-icon.svg" alt="eat-icon">
-                                <span class="res-date">30 apr. 2022</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <span class="res-id" id="0980">ID: 0980</span>
-                            <div class="group">
-                                <img src="images/group icon.svg" alt="group-icon">
-                                <span class="group-number">4</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reservation">
-                        <div class="left">
-                            <h5>De Graaf</h5>
-                            <div class="reservation-date">
-                                <img src="images/eat-icon.svg" alt="eat-icon">
-                                <span class="res-date">30 apr. 2022</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <span class="res-id" id="0980">ID: 0980</span>
-                            <div class="group">
-                                <img src="images/group icon.svg" alt="group-icon">
-                                <span class="group-number">4</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reservation">
-                        <div class="left">
-                            <h5>De Graaf</h5>
-                            <div class="reservation-date">
-                                <img src="images/eat-icon.svg" alt="eat-icon">
-                                <span class="res-date">30 apr. 2022</span>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <span class="res-id" id="0980">ID: 0980</span>
-                            <div class="group">
-                                <img src="images/group icon.svg" alt="group-icon">
-                                <span class="group-number">4</span>
-                            </div>
-                        </div>
-                    </div>
+          <div class="video-frames">Frames: <span id="currentframe">-</span></div>
+
+          <div class="timeline">/* timeline */</div>
+        </div>
+      </div>
+
+      <div id="column-3" class="column">
+        <div class="tile">
+          <h1>Reservations sending today</h1>
+
+          <div class="reservations" id="reservation-container">
+            <div class="reservation">
+              <div class="left">
+                <h5>De Graaf</h5>
+                <div class="reservation-date">
+                  <img src="images/eat-icon.svg" alt="eat-icon" />
+                  <span class="res-date">30 apr. 2022</span>
                 </div>
+              </div>
+              <div class="right">
+                <span class="res-id" id="0980">ID: 0980</span>
+                <div class="group">
+                  <img src="images/group icon.svg" alt="group-icon" />
+                  <span class="group-number">4</span>
+                </div>
+              </div>
             </div>
-
-            <div class="tile">
-                <h1>Used text in video</h1>
-                
-                <div class="text-values">
-                    <ul>
-                        <li>[name]</li>
-                        <li>[last_name]</li>
-                        <li>[date]</li>
-                        <li>[time]</li>
-                        <li>[gate]</li>
-                    </ul>
+            <div class="reservation">
+              <div class="left">
+                <h5>De Graaf</h5>
+                <div class="reservation-date">
+                  <img src="images/eat-icon.svg" alt="eat-icon" />
+                  <span class="res-date">30 apr. 2022</span>
                 </div>
-
-                <div class="tabs">
-                    <div class="buttons">
-                        <button class="tablinks active" onclick="openCity(event, 'tab-1')">Text 1</button>
-                        <button class="tablinks" onclick="openCity(event, 'tab-2')">Text 2</button>
-                        <button class="tablinks" onclick="openCity(event, 'tab-3')">Text 3</button>
-                        <button class="plus">+</button>
-                    </div>
-
-                    <div id="tab-1" class="tabcontent" style="display: block;">
-                        <h3>Text 1</h3>
-                        <textarea id="textarea-1" placeholder="Put some text here..."></textarea>
-                        <div class="text-settings">
-                            <div class="frames-input">
-                                <label>Start frames</label>
-                                <input type="number" id="frames-start" name="frames-start">
-                            </div>
-                            <div class="frames-input">
-                                <label>End frames</label>
-                                <input type="number" id="frames-end" name="frames-end">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div id="tab-2" class="tabcontent" style="display: none;">
-                        <h3>Text 2</h3>
-                        <textarea id="textarea-2" placeholder="Put some text here..."></textarea>
-                    </div>
-                    
-                    <div id="tab-3" class="tabcontent" style="display: none;">
-                        <h3>Text 3</h3>
-                        <textarea id="textarea-3" placeholder="Put some text here..."></textarea>
-                    </div>
+              </div>
+              <div class="right">
+                <span class="res-id" id="0980">ID: 0980</span>
+                <div class="group">
+                  <img src="images/group icon.svg" alt="group-icon" />
+                  <span class="group-number">4</span>
                 </div>
-
-
+              </div>
             </div>
+            <div class="reservation">
+              <div class="left">
+                <h5>De Graaf</h5>
+                <div class="reservation-date">
+                  <img src="images/eat-icon.svg" alt="eat-icon" />
+                  <span class="res-date">30 apr. 2022</span>
+                </div>
+              </div>
+              <div class="right">
+                <span class="res-id" id="0980">ID: 0980</span>
+                <div class="group">
+                  <img src="images/group icon.svg" alt="group-icon" />
+                  <span class="group-number">4</span>
+                </div>
+              </div>
+            </div>
+            <div class="reservation">
+              <div class="left">
+                <h5>De Graaf</h5>
+                <div class="reservation-date">
+                  <img src="images/eat-icon.svg" alt="eat-icon" />
+                  <span class="res-date">30 apr. 2022</span>
+                </div>
+              </div>
+              <div class="right">
+                <span class="res-id" id="0980">ID: 0980</span>
+                <div class="group">
+                  <img src="images/group icon.svg" alt="group-icon" />
+                  <span class="group-number">4</span>
+                </div>
+              </div>
+            </div>
+            <div class="reservation">
+              <div class="left">
+                <h5>De Graaf</h5>
+                <div class="reservation-date">
+                  <img src="images/eat-icon.svg" alt="eat-icon" />
+                  <span class="res-date">30 apr. 2022</span>
+                </div>
+              </div>
+              <div class="right">
+                <span class="res-id" id="0980">ID: 0980</span>
+                <div class="group">
+                  <img src="images/group icon.svg" alt="group-icon" />
+                  <span class="group-number">4</span>
+                </div>
+              </div>
+            </div>
+            <div class="reservation">
+              <div class="left">
+                <h5>De Graaf</h5>
+                <div class="reservation-date">
+                  <img src="images/eat-icon.svg" alt="eat-icon" />
+                  <span class="res-date">30 apr. 2022</span>
+                </div>
+              </div>
+              <div class="right">
+                <span class="res-id" id="0980">ID: 0980</span>
+                <div class="group">
+                  <img src="images/group icon.svg" alt="group-icon" />
+                  <span class="group-number">4</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
+        <div class="tile">
+          <h1>Used text in video</h1>
+
+          <div class="text-values">
+            <ul>
+              <li>[name]</li>
+              <li>[last_name]</li>
+              <li>[date]</li>
+              <li>[time]</li>
+              <li>[gate]</li>
+            </ul>
+          </div>
+
+          <div class="tabs">
+            <div class="buttons">
+              <button
+                class="tablinks active"
+                onclick="openCity(event, 'tab-1')"
+              >
+                Text 1
+              </button>
+              <button class="tablinks" onclick="openCity(event, 'tab-2')">
+                Text 2
+              </button>
+              <button class="tablinks" onclick="openCity(event, 'tab-3')">
+                Text 3
+              </button>
+              <button class="plus">+</button>
+            </div>
+
+            <div id="tab-1" class="tabcontent" style="display: block">
+              <h3>Text 1</h3>
+              <textarea
+                id="textarea-1"
+                placeholder="Put some text here..."
+              ></textarea>
+              <div class="text-settings">
+                <div class="frames-input">
+                  <label>Start frames</label>
+                  <input type="number" id="frames-start" name="frames-start" />
+                </div>
+                <div class="frames-input">
+                  <label>End frames</label>
+                  <input type="number" id="frames-end" name="frames-end" />
+                </div>
+              </div>
+            </div>
+
+            <div id="tab-2" class="tabcontent" style="display: none">
+              <h3>Text 2</h3>
+              <textarea
+                id="textarea-2"
+                placeholder="Put some text here..."
+              ></textarea>
+            </div>
+
+            <div id="tab-3" class="tabcontent" style="display: none">
+              <h3>Text 3</h3>
+              <textarea id="textarea-3" placeholder="Put some text here..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-</body>
+  </body>
 
-<script src="/js/main.js"></script>
-
+  <script src="../Overlay test/public/javascript/VideoFrame.js"></script>
+  <script src="js/main.js"></script>
 </html>
