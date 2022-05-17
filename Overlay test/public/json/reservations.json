@@ -2,7 +2,7 @@
   "reservations": [
     {
       "id": 0,
-      "date": "",
+      "date": "23-05-2022",
       "gate": 1,
       "time": "18:00",
       "guests": [
@@ -23,7 +23,7 @@
     },
     {
       "id": 1,
-      "date": "",
+      "date": "23-05-2022",
       "gate": 1,
       "time": "18:00",
       "guests": [
@@ -39,6 +39,54 @@
           "lastName": "Madzhunov",
           "preferences": ["wine", "fish"],
           "seatNbr": 12
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "date": "23-05-2022",
+      "gate": 1,
+      "time": "18:00",
+      "guests": [
+        {
+          "email": "",
+          "firstName": "Annabelle",
+          "lastName": "de Vos van Steenwijk",
+          "preferences": ["wine", "meat"],
+          "seatNbr": 15
+        },
+        {
+          "firstName": "Charlotte",
+          "lastName": "de Vos van Steenwijk",
+          "preferences": ["wine", "fish"],
+          "seatNbr": 16
+        },
+        {
+          "firstName": "Fabiënne",
+          "lastName": "de Vos van Steenwijk",
+          "preferences": ["wine", "fish"],
+          "seatNbr": 17
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "date": "23-05-2022",
+      "gate": 1,
+      "time": "18:00",
+      "guests": [
+        {
+          "email": "",
+          "firstName": "Jan",
+          "lastName": "Willem",
+          "preferences": ["raki", "birri", "patato"],
+          "seatNbr": 15
+        },
+        {
+          "firstName": "Youri",
+          "lastName": "Oldenhof",
+          "preferences": ["alot of wijne", "fish"],
+          "seatNbr": 16
         }
       ]
     }

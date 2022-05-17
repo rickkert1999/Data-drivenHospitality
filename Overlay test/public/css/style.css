@@ -1,4 +1,4 @@
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,21 +34,89 @@ body{
   align-items: center;
 }
 
-.guestInfo{
+.guestInfo {
   font-size: 200%;
   position: absolute;
 }
 
-#guestInfo0{
-  top: 250px;
-  left: 200px;
-  transform: rotate(-5deg);
+#guestInfo0 {
+  top: 225px;
+  left: 180px;
+  transform: rotate(-4deg);
+  width: 400px;
 }
 
-#guestInfo1{
+#guestInfo1 {
   top: 220px;
   left: 660px;
   transform: rotate(2deg);
+  width: 400px;
+}
+
+.guestInfoDashboard {
+  font-size: 180%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: absolute;
+  font-weight: 550;
+}
+
+.guestInfoDashboard p {
+  height: 42px;
+  overflow: hidden;
+  width: 215px;
+}
+
+#guestInfoDashboard0 {
+  top: 252px;
+  left: 808px;
+  transform: rotate(359deg);
+}
+
+#guestInfoDashboard1 {
+  top: 243px;
+  left: 1536px;
+  transform: rotate(-1deg);
+}
+
+#date0,
+#date1 {
+  top: 87px;
+  position: absolute;
+}
+
+#time0,
+#time1 {
+  top: 129px;
+  position: absolute;
+}
+
+#gate0,
+#gate1 {
+  top: 212px;
+  position: absolute;
+}
+
+#seatNbr0,
+#seatNbr1 {
+  top: 257px;
+  position: absolute;
+}
+
+.preferanceDiv {
+  display: flex;
+  position: absolute;
+  top: 308px;
+  left: -127px;
+}
+
+#preferanceDiv0 {
+  top: 317px;
+  left: -134px;
+}
+
+.preferanceDiv p {
+  margin-left: -145px;
 }
 
 #overlay {
@@ -77,11 +145,11 @@ body{
   z-index: 0;
   cursor: default;
   pointer-events: none;
-  
+
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 }
 
-#playBtn{
+#playBtn {
   opacity: 0%;
 }

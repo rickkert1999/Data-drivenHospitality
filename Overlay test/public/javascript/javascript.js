@@ -12,8 +12,8 @@ fetch("json/reservations.json")
     const urlParams = new URLSearchParams(window.location.search);
     const reservationId = urlParams.get("reservationId");
 
-    var currentFrame = document.getElementById("video");
-    var video = VideoFrame({
+    const currentFrame = document.getElementById("video");
+    const video = VideoFrame({
       id: "video",
       frameRate: 60,
       callback: function (frame) {
@@ -22,19 +22,19 @@ fetch("json/reservations.json")
 
         if (frame > 270 && frame < 415) {
           textOverlay.innerHTML =
-            "<p id=insertedText>We are prepairing everything <br> for your visit!</p>";
+            "<p id=insertedText>We are preparing everything <br> for your visit!</p>";
         } else if (frame > 590 && frame < 762) {
           if (frame === 591) {
             textOverlay.innerHTML = "";
 
             //for each guest write down the name
             for (
-              var i = 0;
+              let i = 0;
               i < dataGuest.reservations[reservationId].guests.length;
               i++
             ) {
-              var guest = dataGuest.reservations[reservationId].guests[i];
-              var guestName = guest.firstName + " " + guest.lastName;
+              let guest = dataGuest.reservations[reservationId].guests[i];
+              let guestName = guest.firstName + " " + guest.lastName;
 
               const divName = document.createElement("div");
               divName.setAttribute("id", "guestInfo" + i);
@@ -44,8 +44,8 @@ fetch("json/reservations.json")
               textOverlay.appendChild(divName);
 
               //for each guest write down the preferance
-              for (var j = 0; j < guest.preferences.length; j++) {
-                var preference = guest.preferences[j];
+              for (let j = 0; j < guest.preferences.length; j++) {
+                let preference = guest.preferences[j];
 
                 const paraPreference = document.createElement("p");
                 paraPreference.setAttribute("id", "preference" + j);
@@ -64,71 +64,73 @@ fetch("json/reservations.json")
             dataGuest.reservations[reservationId].guests[0].firstName +
             "!" +
             "</p>";
-        } else if (frame > 1274 && frame < 1425) {
+        }
+        ////////TEST BOARDINGPOS TEST
+        else if (frame > 1274 && frame < 1425) {
           if (frame === 1275) {
             textOverlay.innerHTML = "";
 
             //for each guest write down the name
-            for (var i = 0; i < 2; i++) {
-              var guest = dataGuest.reservations[reservationId].guests[i];
-              var guestName = guest.firstName + " " + guest.lastName;
+            for (let i = 0; i < 2; i++) {
+              let guest = dataGuest.reservations[reservationId].guests[i];
+
+              let guestName = guest.firstName + " " + guest.lastName;
 
               const divName = document.createElement("div");
-              divName.setAttribute("id", "guestInfo" + i);
-              divName.setAttribute("class", "guestInfo");
-              divName.innerHTML = "<p id=name" + i + ">" + guestName + "</p>";
+              divName.setAttribute("id", "guestInfoDashboard" + i);
+              divName.setAttribute("class", "guestInfoDashboard");
+              divName.innerHTML =
+                "<p id=name" +
+                i +
+                ">" +
+                guestName +
+                "</p>" +
+                "<p id=date" +
+                i +
+                ">" +
+                dataGuest.reservations[reservationId].date +
+                "</p>" +
+                "<p id=time" +
+                i +
+                ">" +
+                dataGuest.reservations[reservationId].time +
+                "</p>" +
+                "<p id=gate" +
+                i +
+                ">" +
+                dataGuest.reservations[reservationId].gate +
+                "</p>" +
+                "<p id=seatNbr" +
+                i +
+                ">" +
+                dataGuest.reservations[reservationId].guests[i].seatNbr +
+                "</p>";
 
               textOverlay.appendChild(divName);
 
+              const preferanceDiv = document.createElement("div");
+              preferanceDiv.setAttribute("id", "preferanceDiv" + i);
+              preferanceDiv.setAttribute("class", "preferanceDiv");
+
+              document
+                .getElementById("guestInfoDashboard" + i)
+                .appendChild(preferanceDiv);
+
               //for each guest write down the preferance
-              for (var j = 0; j < 2; j++) {
-                var preference = guest.preferences[j];
+              for (let j = 0; j < 2; j++) {
+                let preference = guest.preferences[j];
 
                 const paraPreference = document.createElement("p");
                 paraPreference.setAttribute("id", "preference" + j);
                 paraPreference.innerHTML = preference;
 
                 document
-                  .getElementById("guestInfo" + i)
+                  .getElementById("preferanceDiv" + i)
                   .appendChild(paraPreference);
               }
             }
           }
-        }
-        ////////TEST BOARDINGPOS TEST
-        else if (frame > 0 && frame < 1425) {
-          if (frame === 1) {
-            textOverlay.innerHTML = "";
-
-            //for each guest write down the name
-            for (var i = 0; i < 2; i++) {
-              var guest = dataGuest.reservations[reservationId].guests[i];
-              var guestName = guest.firstName + " " + guest.lastName;
-
-              const divName = document.createElement("div");
-              divName.setAttribute("id", "guestInfo" + i);
-              divName.setAttribute("class", "guestInfo");
-              divName.innerHTML = "<p id=name" + i + ">" + guestName + "</p>";
-
-              textOverlay.appendChild(divName);
-
-              //for each guest write down the preferance
-              for (var j = 0; j < 2; j++) {
-                var preference = guest.preferences[j];
-
-                const paraPreference = document.createElement("p");
-                paraPreference.setAttribute("id", "preference" + j);
-                paraPreference.innerHTML = preference;
-
-                document
-                  .getElementById("guestInfo" + i)
-                  .appendChild(paraPreference);
-              }
-            }
-          }
-        }
-        ////////////
-        else {
+        } else {
           textOverlay.innerHTML = "";
         }
       },
