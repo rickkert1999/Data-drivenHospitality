@@ -87,7 +87,7 @@
           <h1>Used video</h1>
           <div class="video-container">
             <video controls id="dashboard_video" src="../Overlay test/public/video/prepVideo.mp4" type="video/mp4"></video>
-            <button id="play-pause">play</button>
+            <button id="play-pause"><span id="icon"></span></button>
           </div>
 
           <div class="video-frames">Frames: <span id="currentframe">-</span></div>
@@ -101,11 +101,13 @@
           <h1>Reservations sending today</h1>
 
           <div class="reservations" id="reservation-container">
+
+            <!--
             <div class="reservation">
               <div class="left">
                 <h5>De Graaf</h5>
                 <div class="reservation-date">
-                  <img src="images/eat-icon.svg" alt="eat-icon" />
+                  <img src="images/eat-icon.svg" alt="eat-icon"/>
                   <span class="res-date">30 apr. 2022</span>
                 </div>
               </div>
@@ -117,86 +119,9 @@
                 </div>
               </div>
             </div>
-            <div class="reservation">
-              <div class="left">
-                <h5>De Graaf</h5>
-                <div class="reservation-date">
-                  <img src="images/eat-icon.svg" alt="eat-icon" />
-                  <span class="res-date">30 apr. 2022</span>
-                </div>
-              </div>
-              <div class="right">
-                <span class="res-id" id="0980">ID: 0980</span>
-                <div class="group">
-                  <img src="images/group icon.svg" alt="group-icon" />
-                  <span class="group-number">4</span>
-                </div>
-              </div>
-            </div>
-            <div class="reservation">
-              <div class="left">
-                <h5>De Graaf</h5>
-                <div class="reservation-date">
-                  <img src="images/eat-icon.svg" alt="eat-icon" />
-                  <span class="res-date">30 apr. 2022</span>
-                </div>
-              </div>
-              <div class="right">
-                <span class="res-id" id="0980">ID: 0980</span>
-                <div class="group">
-                  <img src="images/group icon.svg" alt="group-icon" />
-                  <span class="group-number">4</span>
-                </div>
-              </div>
-            </div>
-            <div class="reservation">
-              <div class="left">
-                <h5>De Graaf</h5>
-                <div class="reservation-date">
-                  <img src="images/eat-icon.svg" alt="eat-icon" />
-                  <span class="res-date">30 apr. 2022</span>
-                </div>
-              </div>
-              <div class="right">
-                <span class="res-id" id="0980">ID: 0980</span>
-                <div class="group">
-                  <img src="images/group icon.svg" alt="group-icon" />
-                  <span class="group-number">4</span>
-                </div>
-              </div>
-            </div>
-            <div class="reservation">
-              <div class="left">
-                <h5>De Graaf</h5>
-                <div class="reservation-date">
-                  <img src="images/eat-icon.svg" alt="eat-icon" />
-                  <span class="res-date">30 apr. 2022</span>
-                </div>
-              </div>
-              <div class="right">
-                <span class="res-id" id="0980">ID: 0980</span>
-                <div class="group">
-                  <img src="images/group icon.svg" alt="group-icon" />
-                  <span class="group-number">4</span>
-                </div>
-              </div>
-            </div>
-            <div class="reservation">
-              <div class="left">
-                <h5>De Graaf</h5>
-                <div class="reservation-date">
-                  <img src="images/eat-icon.svg" alt="eat-icon" />
-                  <span class="res-date">30 apr. 2022</span>
-                </div>
-              </div>
-              <div class="right">
-                <span class="res-id" id="0980">ID: 0980</span>
-                <div class="group">
-                  <img src="images/group icon.svg" alt="group-icon" />
-                  <span class="group-number">4</span>
-                </div>
-              </div>
-            </div>
+            -->
+
+
           </div>
         </div>
 
@@ -215,10 +140,7 @@
 
           <div class="tabs">
             <div class="buttons">
-              <button
-                class="tablinks active"
-                onclick="openCity(event, 'tab-1')"
-              >
+              <button class="tablinks active" onclick="openCity(event, 'tab-1')">
                 Text 1
               </button>
               <button class="tablinks" onclick="openCity(event, 'tab-2')">
