@@ -19,6 +19,7 @@
           <h3>Standard video</h3>
           <div class="video-container">
             <video controls muted src="../Overlay test/public/video/prepVideo.mp4" type="video/mp4"></video>
+            <div class="changeVideoOverlay">Change video</div>
           </div>
         </div>
 
@@ -66,7 +67,8 @@
             <div class="time-options">
               <div class="interval">
                 <span class="text">Days</span>
-                <input type="number" id="interval_value" name="interval" />
+                <input type="number" id="interval_value" name="interval"/>
+                <button id="submit-interval">Submit day</button>
               </div>
               <div class="time">
                 <span class="text">Time</span>
@@ -101,27 +103,7 @@
           <h1>Reservations sending today</h1>
 
           <div class="reservations" id="reservation-container">
-
-            <!--
-            <div class="reservation">
-              <div class="left">
-                <h5>De Graaf</h5>
-                <div class="reservation-date">
-                  <img src="images/eat-icon.svg" alt="eat-icon"/>
-                  <span class="res-date">30 apr. 2022</span>
-                </div>
-              </div>
-              <div class="right">
-                <span class="res-id" id="0980">ID: 0980</span>
-                <div class="group">
-                  <img src="images/group icon.svg" alt="group-icon" />
-                  <span class="group-number">4</span>
-                </div>
-              </div>
-            </div>
-            -->
-
-
+            <div id="no-reservations" class="no-reservations">No reservations send</div>
           </div>
         </div>
 
@@ -140,13 +122,13 @@
 
           <div class="tabs">
             <div class="buttons">
-              <button class="tablinks active" onclick="openCity(event, 'tab-1')">
+              <button class="tablinks active" onclick="openTab(event, 'tab-1')">
                 Text 1
               </button>
-              <button class="tablinks" onclick="openCity(event, 'tab-2')">
+              <button class="tablinks" onclick="openTab(event, 'tab-2')">
                 Text 2
               </button>
-              <button class="tablinks" onclick="openCity(event, 'tab-3')">
+              <button class="tablinks" onclick="openTab(event, 'tab-3')">
                 Text 3
               </button>
               <button class="plus">+</button>
@@ -154,11 +136,23 @@
 
             <div id="tab-1" class="tabcontent" style="display: block">
               <h3>Text 1</h3>
-              <textarea
-                id="textarea-1"
-                placeholder="Put some text here..."
-              ></textarea>
-              <div class="text-settings">
+              <textarea id="textarea-1" placeholder="Put some text here...">We zijn alles aan het voorbereiden voor jouw bezoek!</textarea>
+              <div id="textSettings-1" class="text-settings">
+                <div class="frames-input">
+                  <label>Start frames</label>
+                  <input type="number" id="frames-start" name="frames-start" value="305" />
+                </div>
+                <div class="frames-input">
+                  <label>End frames</label>
+                  <input type="number" id="frames-end" name="frames-end" value="430" />
+                </div>
+              </div>
+            </div>
+
+            <div id="tab-2" class="tabcontent" style="display: none">
+              <h3>Text 2</h3>
+              <textarea id="textarea-2" placeholder="Put some text here...">We kijken ernaar uit om je aan onze tafel te zien [name]</textarea>
+              <div id="textSettings-2" class="text-settings">
                 <div class="frames-input">
                   <label>Start frames</label>
                   <input type="number" id="frames-start" name="frames-start" />
@@ -170,17 +164,19 @@
               </div>
             </div>
 
-            <div id="tab-2" class="tabcontent" style="display: none">
-              <h3>Text 2</h3>
-              <textarea
-                id="textarea-2"
-                placeholder="Put some text here..."
-              ></textarea>
-            </div>
-
             <div id="tab-3" class="tabcontent" style="display: none">
               <h3>Text 3</h3>
               <textarea id="textarea-3" placeholder="Put some text here..."></textarea>
+              <div id="textSettings-3" class="text-settings">
+                <div class="frames-input">
+                  <label>Start frames</label>
+                  <input type="number" id="frames-start" name="frames-start" />
+                </div>
+                <div class="frames-input">
+                  <label>End frames</label>
+                  <input type="number" id="frames-end" name="frames-end" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

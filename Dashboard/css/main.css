@@ -11,6 +11,8 @@ h1, h2, h3, h4, h5, h6{margin: 0 0 10px 0;}
 .video-container button#play-pause span.pause::before{background-image: url(../images/pause.svg);}
 .video-container button#play-pause span.play::before{background-image: url(../images/play.svg);}
 
+#column-1 .video-container .changeVideoOverlay{opacity: 0; display: flex; justify-content: center; align-items: center; color: #fff; height: 100%; width: 100%; background-color: rgba(0,0,0,.4); position: absolute; top: 0; right: 0; left: 0; bottom: 0;}
+#column-1 .video-container .changeVideoOverlay:hover{opacity: 1;}
 
 .column{padding: 0 10px;}
 .column#column-1{width: 25%;}
@@ -19,6 +21,8 @@ h1, h2, h3, h4, h5, h6{margin: 0 0 10px 0;}
 
 .tile{background-color: #eaeaea; padding: 15px; margin: 20px 0;}
 
+/* SHARING OPTIONS */
+.sharing-options ul{list-style-type: none; padding: 0;}
 
 
 /* RESERVATION */
@@ -26,6 +30,8 @@ h1, h2, h3, h4, h5, h6{margin: 0 0 10px 0;}
 .reservation{background-color: #fff; width: calc(50% - 5px); display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px;}
 .reservation h5{margin: 0;}
 .reservation .left, .reservation .right{padding: 10px;}
+.reservations #no-reservations{display: none;}
+.reservations #no-reservations.active{display: block;}
 
 /* TABS */
 .text-values ul{list-style-type: none; padding: 0; margin: 0 0 15px 0; display: flex; justify-content: flex-start;}

@@ -1,3 +1,4 @@
+// Get and show frames of video in Dashboard
 var currentFrame = document.getElementById("dashboard_video");
 
     var video = VideoFrame({
@@ -15,7 +16,6 @@ var currentFrame = document.getElementById("dashboard_video");
         if (video.video.paused) {
           video.video.play();
           video.listen("frame");
-          
           document.getElementById("icon").classList.remove('play');
           document.getElementById("icon").classList.add('pause');
         } else {
@@ -31,10 +31,7 @@ function myHandeler(e) {
     video.stopListen();
 }
 
-
-
-
-function openCity(evt, cityName) {
+function openTab(evt, cityName) {
     let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -48,9 +45,7 @@ function openCity(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 
-
-
-// GET CURRENT DATE
+// Get current date
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -73,28 +68,22 @@ fetch("../Overlay%20test/public/json/reservations.json")
 
     for (var i = 0; i < dataGuest.reservations.length; i++) {
         const reservationdate = dataGuest.reservations[i].date;
+        const reservationList = document.getElementById('reservation-container');
         
         console.log('reservation = ' + reservationdate);
-        // console.log('today = ' + today);
 
+        // If the date of reservation is the same as today
         if(reservationdate == today){
             const reservation_ID = dataGuest.reservations[i].id;
             const guest_lastname = dataGuest.reservations[i].guests[0].lastName;
 
-            // var guest = dataGuest.reservations[reservationId].guests[i];
-            // var guestName = guest.firstName + " " + guest.lastName;
-
             console.log('guest = ' + guest_lastname);
-          
             console.log('reservation ID = ' + reservation_ID);
 
-            const reservationList = document.getElementById('reservation-container');
-
+            // Create reservation block with data in it
             let reservationHTML = '<div class="left"><h5>' + guest_lastname + '</h5> <div class="reservation-date"><img src="images/eat-icon.svg" alt="eat-icon"/><span class="res-date">30 apr. 2022</span></div>  </div><div class="right"><span class="res-id">ID:' + reservation_ID + '</span> <div class="group"><img src="images/group icon.svg" alt="group-icon"/><span class="group-number">4</span></div> </div>';
-    
-            // reservationList.innerHTML = reservationHTML;
 
-
+            // Creating reservation div around the data
             const reservationDiv = document.createElement("div");
               reservationDiv.setAttribute("id", "reservation-" + i);
               reservationDiv.setAttribute("class", "reservation");
@@ -102,7 +91,7 @@ fetch("../Overlay%20test/public/json/reservations.json")
 
             reservationList.appendChild(reservationDiv);
          
-        }
+        } 
     }
 
    
