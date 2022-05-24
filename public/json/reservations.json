@@ -1,0 +1,157 @@
+{
+  "reservations": [
+    {
+      "id": 0,
+      "date": "23/05/2022",
+      "gate": 1,
+      "time": "18:00",
+      "guests": [
+        {
+          "email": "",
+          "firstName": "Marc",
+          "lastName": "Graaf",
+          "preferences": ["wine", "no fish"],
+          "seatNbr": 8
+        },
+        {
+          "firstName": "Anna",
+          "lastName": "Graaf",
+          "preferences": ["wine", "no muchrooms", "no union"],
+          "seatNbr": 9
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "date": "23/05/2022",
+      "gate": 1,
+      "time": "18:00",
+      "guests": [
+        {
+          "email": "",
+          "firstName": "Youri",
+          "lastName": "Oldenhof",
+          "preferences": ["wine", "meat"],
+          "seatNbr": 11
+        },
+        {
+          "firstName": "Kaloyan",
+          "lastName": "Madzhunov",
+          "preferences": ["wine", "fish"],
+          "seatNbr": 12
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "date": "23/05/2022",
+      "gate": 1,
+      "time": "18:00",
+      "guests": [
+        {
+          "email": "",
+          "firstName": "Annabelle",
+          "lastName": "de Vos van Steenwijk",
+          "preferences": ["wine", "meat"],
+          "seatNbr": 15
+        },
+        {
+          "firstName": "Charlotte",
+          "lastName": "de Vos van Steenwijk",
+          "preferences": ["wine", "fish"],
+          "seatNbr": 16
+        },
+        {
+          "firstName": "Fabiënne",
+          "lastName": "de Vos van Steenwijk",
+          "preferences": ["wine", "fish"],
+          "seatNbr": 17
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "date": "23/05/2022",
+      "gate": 1,
+      "time": "18:00",
+      "guests": [
+        {
+          "email": "",
+          "firstName": "Jan",
+          "lastName": "Willem",
+          "preferences": ["raki", "birri", "patato"],
+          "seatNbr": 15
+        },
+        {
+          "firstName": "Youri",
+          "lastName": "Oldenhof",
+          "preferences": ["alot of wijne", "fish"],
+          "seatNbr": 16
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "date": "23/05/2022",
+      "gate": 1,
+      "time": "18:00",
+      "guests": [
+        {
+          "email": "Y.Lopezgarrido@fontys.nl",
+          "firstName": "Yliana",
+          "lastName": "Lopez Garrido",
+          "preferences": ["Steak", "Wine"],
+          "seatNbr": 18
+        },
+        {
+          "firstName": "Heleen",
+          "lastName": "Kimman",
+          "preferences": ["Fish", "Wine"],
+          "seatNbr": 19
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "date": "24/05/2022",
+      "gate": "DemoLab",
+      "time": "15:30",
+      "guests": [
+        {
+          "email": "c.thomassen@fontys.nl",
+          "firstName": "Constanze",
+          "lastName": "Thomassen",
+          "preferences": ["Presentation"],
+          "seatNbr": 1
+        },
+        {
+          "firstName": "Joris",
+          "lastName": "Ariëns",
+          "preferences": ["Presentation"],
+          "seatNbr": 2
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "date": "24/05/2022",
+      "gate": "DemoLab",
+      "time": "15:30",
+      "guests": [
+        {
+          "email": "j.ariens@fontys.nl",
+          "firstName": "Joris",
+          "lastName": "Ariëns",
+          "preferences": ["Presentation"],
+          "seatNbr": 2
+        },
+        {
+          "firstName": "Constanze",
+          "lastName": "Thomassen",
+          "preferences": ["Presentation"],
+          "seatNbr": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="font-family: Arial, Helvetica, sans-serif">
+    <center style="margin-top: 10%">
+      <h1>Reserverings formulier</h1>
+
+      <form
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 5%; ;
+        "
+      >
+        <div>
+          <h2>First guest</h2>
+          <label for="firstName1">Firstname:</label>
+          <input type="text" id="firstName1" /><br /><br />
+          <label for="lastName1">Lastname:</label>
+          <input type="text" id="lastName1" /><br /><br />
+          <label for="email">Email:</label>
+          <input type="text" id="email" /><br /><br />
+          <label for="meat1">Meat</label>
+          <input type="radio" id="meat1" name="firs_guest" value="meat" /><br />
+          <label for="fish1">Fish</label>
+          <input type="radio" id="fish1" name="firs_guest" value="fish" />
+          <p>Alergies:</p>
+          <input type="checkbox" id="gluten1" name="gluten1" value="Gluten" />
+          <label for="gluten1">Gluten</label><br />
+          <input
+            type="checkbox"
+            id="lactose1"
+            name="lactose1"
+            value="lactose"
+          />
+          <label for="lactose1">Lactose</label><br />
+        </div>
+
+        <div>
+          <h2>Second guest</h2>
+          <label for="firstName2">Firstname:</label>
+          <input type="text" id="firstName2" /><br /><br />
+          <label for="lastName2">Lastname:</label>
+          <input type="text" id="lastName2" /><br /><br />
+          <label for="meat2">Meat</label>
+          <input
+            type="radio"
+            id="meat2"
+            name="second_guest"
+            value="meat"
+          /><br />
+          <label for="fish2">Fish</label>
+          <input
+            type="radio"
+            id="fish2"
+            name="second_guest"
+            value="fish"
+          /><br />
+          <p>Alergies:</p>
+          <input type="checkbox" id="gluten2" name="gluten2" value="gluten" />
+          <label for="gluten2">Gluten</label><br />
+          <input
+            type="checkbox"
+            id="lactose2"
+            name="lactose2"
+            value="lactose"
+          />
+          <label for="lactose2">Lactose</label><br />
+        </div>
+      </form>
+
+      <button id="reservation">Reservation</button>
+    </center>
+
+    <script>
+      document
+        .getElementById("reservation")
+        .addEventListener("click", function sendData() {
+          const reservationData = {
+            reservations: [
+              {
+                id: 1,
+                date: "",
+                gate: 1,
+                time: "18:00",
+                guests: [
+                  {
+                    email: "",
+                    firstName: document.getElementById("firstName1").value,
+                    lastName: document.getElementById("lastName1").value,
+                    preferences: ["wine", "no fish"],
+                    seatNbr: 8,
+                  },
+                  {
+                    firstName: document.getElementById("firstName2").value,
+                    lastName: document.getElementById("lastName2").value,
+                    preferences: ["wine", "no muchrooms", "no union"],
+                    seatNbr: 9,
+                  },
+                ],
+              },
+            ],
+          };
+
+          const options = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(reservationData),
+          };
+
+          fetch("/reservation", options).then((res) => {
+            console.log(res);
+          });
+
+          console.log(document.getElementById("gluten2").value);
+        });
+    </script>
+  </body>
+</html>
