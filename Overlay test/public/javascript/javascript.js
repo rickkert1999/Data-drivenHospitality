@@ -60,7 +60,7 @@ fetch("json/reservations.json")
         } else if (frame > 1148 && frame < 1274) {
           textOverlay.innerHTML =
             "<p id=insertedText>" +
-            "We are excited to see you <br> at our table " +
+            "We are excited to see you <br> at our table, " +
             dataGuest.reservations[reservationId].guests[0].firstName +
             "!" +
             "</p>";
@@ -117,7 +117,7 @@ fetch("json/reservations.json")
                 .appendChild(preferanceDiv);
 
               //for each guest write down the preferance
-              for (let j = 0; j < 2; j++) {
+              for (let j = 0; j < guest.preferences.length; j++) {
                 let preference = guest.preferences[j];
 
                 const paraPreference = document.createElement("p");
